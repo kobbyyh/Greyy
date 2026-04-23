@@ -1,229 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greyy</title>
-  <link rel="icon" type="image/x-icon" href="1.jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greyy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="icon" type="image/x-icon" href="1.jpeg">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Montserrat:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff5f7 0%, #fde2e4 100%);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        .cursive {
+            font-family: 'Birthstone', cursive;
+        }
 
-<style>
-body {
-    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-}
+        /* Floating Animation */
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
 
-h1, h2 {
-    font-family: 'Playfair Display', serif;
-}
+        @keyframes floating {
+            0% {
+                transform: translateY(0px) rotate(-1deg);
+            }
 
-.hero {
-    height: 100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
 
-.hero h1 {
-    font-size: 3rem;
-}
+            100% {
+                transform: translateY(0px) rotate(-1deg);
+            }
+        }
 
-.btn-gold {
-    background: #d4af37;
-    border: none;
-    color: black;
-}
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-/* MESSAGE */
-.message {
-    max-width: 600px;
-    margin:auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    min-height: 200px;
-}
-
-/* IMAGE STYLE */
-.photo-card {
-    background: #111;
-    padding:10px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transition:0.3s;
-}
-
-.photo-card:hover {
-    transform: translateY(-5px);
-}
-
-.photo-card img {
-    width:100%;
-    border-radius:10px;
-}
-
-/* VIDEO STYLE */
-.video-card {
-    background:#111;
-    padding:10px;
-    border-radius:15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-video {
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-/* HEARTS */
-.heart {
-    position: fixed;
-    bottom: -10px;
-    color: #ff4d6d;
-    font-size: 20px;
-    animation: floatUp 6s linear infinite;
-}
-
-@keyframes floatUp {
-    0% {transform: translateY(0); opacity:1;}
-    100% {transform: translateY(-100vh); opacity:0;}
-}
-</style>
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 50;
+        }
+    </style>
 </head>
 
-<body>
+<body class="py-10">
 
-<!-- HERO -->
-<section class="hero">
-    <div>
-        <h1>Happy Birthday</h1>
-        <h2 class="mt-2">Grace Abena Obema Agyekum ❤️</h2>
-        <!-- <button class="btn btn-gold mt-4" onclick="scrollToMessage()">Read This</button> -->
+    <div class="text-center mb-16 animate__animated animate__fadeIn">
+        <h1 class="cursive text-7xl md:text-9xl text-rose-400 mb-2">Greyy</h1>
+        <p class="uppercase tracking-[0.5em] text-gray-500 text-xs">Happy Birthday  23.04</p>
     </div>
-</section>
 
-<!-- MESSAGE -->
-<section class="container py-5 text-center">
-    <h2 class="mb-4">For You</h2>
-    <h2 class="mb-4" style="color: pink;">23.04</h2>
-    <div id="typedText" class="message"></div>
-</section>
+    <main class="max-w-5xl mx-auto px-4">
 
-<!-- PHOTO -->
-<section class="container py-5">
-    <!-- <h2 class="text-center mb-4">You</h2> -->
-    <div class="row justify-content-center">
-        <div class="col-md-4 col-6">
-            <div class="photo-card">
-                <img src="1.jpeg">
-                <small>my favorite view</small>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+            <div class="polaroid float -rotate-2">
+                <video autoplay muted loop class="w-full h-[400px] object-cover">
+                    <source src="2.mp4" type="video/mp4">
+                </video>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- VIDEOS -->
-<section class="container py-5">
-    <h2 class="text-center mb-4">Memories</h2>
-    <div class="row g-4">
-
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline  src="2.mp4"></video>
+            <div class="p-8 bg-white/40 backdrop-blur-md rounded-3xl border border-white/60 shadow-xl">
+                <h2 class="text-2xl font-light text-gray-800 mb-6 italic">A Message for You...</h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed">
+                    <p>I just want to wish you a beautiful birthday, Grace.</p>
+                    <p>I’m truly sorry for what happened back then. I’m still learning and growing as a person, and I
+                        hope you find space in your heart to forgive me.</p>
+                    <p class="cursive text-4xl text-rose-400 mt-4">Wishing you luck always.</p>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline  src="3.mp4" ></video>
+        <div class="relative min-h-[800px] mt-20">
+            <div class="absolute top-0 left-0 w-64 md:w-80 polaroid rotate-6 z-10">
+                <video controls autoplay muted loop playsinline class="w-full aspect-square object-cover bg-gray-100">
+                    <source src="3.mp4" type="video/mp4">
+                </video>
+                <p class="text-[10px] text-center mt-2 text-gray-300">Grace</p>
+
+            </div>
+
+            <div class="mx-auto w-72 md:w-96 polaroid -rotate-3 z-20 relative">
+                <img src="1.jpeg" alt="Grace" class="w-full object-cover">
+                <p class="cursive text-center pt-4 text-2xl text-gray-400" style="color:  rgb(226, 11, 47);">The
+                    Birthday Girl</p>
+                <p class="cursive text-center pt-4 text-2xl text-gray-400">_missgreycie</p>
+
+            </div>
+
+            <div class="absolute top-20 right-0 w-64 md:w-80 polaroid -rotate-12 z-10">
+                <video controls autoplay muted loop playsinline class="w-full aspect-video object-cover bg-gray-100">
+                    <source src="7.mp4" type="video/mp4">
+                </video>
+                <p class="text-[10px] text-center mt-2 text-gray-300">Abena</p>
+
+            </div>
+
+            <div class="absolute bottom-10 left-10 w-48 md:w-72 polaroid rotate-12">
+                <video controls autoplay muted loop playsinline class="w-full aspect-square object-cover bg-gray-100">
+                    <source src="5.mp4" type="video/mp4">
+                </video>
+                <p class="text-[10px] text-center mt-2 text-gray-300">Obema</p>
+
+            </div>
+
+            <div class="absolute bottom-0 right-10 w-64 md:w-80 polaroid -rotate-2">
+                <video controls autoplay muted loop playsinline class="w-full aspect-video object-cover bg-gray-100">
+                    <source src="6.mp4" type="video/mp4">
+                    <source src="7.mp4" type="video/mp4">
+                </video>
+                <p class="text-[10px] text-center mt-2 text-gray-300">Agyekum</p>
+
             </div>
         </div>
+    </main>
 
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline src="4.mp4"></video>
-            </div>
-        </div>
+    <footer class="mt-32 pb-10 text-center">
+        <div class="h-px w-20 bg-rose-200 mx-auto mb-6"></div>
+        <p class="cursive text-3xl text-rose-300">from </p>
+        <p class="cursive text-2xl text-rose-800"> K a y </p>
 
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline src="5.mp4"></video>
-            </div>
-        </div>
+    </footer>
 
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline src="6.mp4"></video>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-6">
-            <div class="video-card">
-                <video controls autoplay muted loop playsinline src="7.mp4"></video>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- FINAL -->
-<section class="text-center py-5">
-    <h2>Happy Birthday Greyy❤️</h2>
-    <p>— Kayy</p>
-</section>
-
-<script>
-function scrollToMessage(){
-    document.getElementById("typedText").scrollIntoView({behavior:"smooth"});
-}
-
-/* TYPING EFFECT */
-const text = `I just want to wish you a happy birthday, Grace.
-
-I’m sorry for what happened back then.
-
-I’m still learning... still growing into a better person.
-
-I truly wish you happiness and peace.
-
-And maybe, someday, you might find a space in your heart to forgive me.
-
-Today is yours... and I hope it’s beautiful.`;
-
-let i = 0;
-function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("typedText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 30);
-    }
-}
-typeWriter();
-
-/* FLOATING HEARTS */
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = Math.random()*10 + 15 + "px";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
-
-setInterval(createHeart, 500);
-</script>
 
 </body>
+
 </html>
